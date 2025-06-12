@@ -1,11 +1,12 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-import cors from 'cors';
 
-import express from 'express';
-import multer from 'multer';
-import fetch from 'node-fetch';
-import FormData from 'form-data';
+const express = require('express');
+const multer = require('multer');
+const fetch = require('node-fetch');
+const FormData = require('form-data');
+const cors = require('cors');
+
 
 process.on('uncaughtException', err => console.error('❌ Uncaught Exception:', err));
 process.on('unhandledRejection', err => console.error('❌ Unhandled Rejection:', err));
