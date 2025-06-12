@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import cors from 'cors';
 
 import express from 'express';
 import multer from 'multer';
@@ -11,6 +12,13 @@ process.on('unhandledRejection', err => console.error('❌ Unhandled Rejection:'
 
 const app = express();
 const upload = multer();
+app.use(cors());
+
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+}));
 
 const SHOP = process.env.SHOPIFY_STORE_DOMAIN;
 const TOKEN = process.env.SHOPIFY_ADMIN_TOKEN;
